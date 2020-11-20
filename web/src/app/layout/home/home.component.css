@@ -1,0 +1,22 @@
+section {
+  margin-top: 50px;
+  padding: 0 40px;
+}
+
+section h2 {
+  font-weight: bold;
+  color: #333;
+  font-size: 40px;
+}
+
+section p {
+  font-size: 16px;
+  color: #333;
+  max-width: 350px;
+  line-height: 26px;
+}
+
+div.tabs {
+  padding: 0 40px;
+  margin-top: 50px;
+}

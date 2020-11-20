@@ -1,0 +1,80 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 45px;
+}
+
+.contentWrapper {
+  width: 100%;
+  max-width: 1100px;
+
+  height: 95%;
+  max-height: 680px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+
+  padding-left: 20px;
+
+  background: url(../../../assets/DrawBackground.svg) no-repeat 80% center;
+  background-size: contain;
+}
+
+.logo {
+  width: 150px;
+  margin-bottom: 50px;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  max-width: 250px;
+}
+
+.mainContent p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 40px;
+  color: #666;
+}
+
+.mainContent button {
+  font-size: 18px;
+  font-weight: bold;
+  height: 50px;
+  background-color: #588ED2;
+  color: #fff;
+}
+
+.mainContent a {
+  margin-top: 20px;
+  color: #588ED2;
+  text-align: center;
+  font-size: 18px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1000px){
+ .contentWrapper {
+   background: #fcfcfc;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ .mainContent {
+   justify-content: center;
+   align-items: center;
+ }
+ .mainContent p {
+   text-align: center;
+   width: auto;
+ }
+}

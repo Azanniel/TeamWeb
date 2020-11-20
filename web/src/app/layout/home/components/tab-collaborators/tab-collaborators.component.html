@@ -1,0 +1,133 @@
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">view_agenda</mat-icon>
+      Por setores
+    </ng-template>
+
+    <div class="empty-state" *ngIf="collaborators.length === 0">
+      Não há Colaboradores cadastrados
+    </div>
+
+    <section *ngFor="let department of departments.sort()">
+      <h3>{{department}}</h3>
+
+      <div class="grid">
+        <div class="content" *ngFor="let collaborator of collaborators">
+          <div class="card" (click)="dialogCollaborator(collaborator)" *ngIf="department === collaborator.department">
+            <div class="circle">
+              <p>{{collaborator.name.slice(0, 1)}}</p>
+            </div>
+
+            <h4>{{collaborator.name}}</h4>
+
+            <div class="description">
+              <p>
+                <mat-icon class="tab-icon">view_agenda</mat-icon> {{collaborator.department}}
+              </p>
+              <p>
+                <mat-icon class="tab-icon">work</mat-icon> {{collaborator.position}}
+              </p>
+            </div>
+
+            <div class="document">
+              <p>{{collaborator.cpf}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">work</mat-icon>
+      Por cargos
+    </ng-template>
+
+    <div class="empty-state" *ngIf="collaborators.length === 0">
+      Não há Colaboradores cadastrados
+    </div>
+
+    <section *ngFor="let position of positions.sort()">
+      <h3>{{position}}</h3>
+
+      <div class="grid">
+        <div class="content" *ngFor="let collaborator of collaborators">
+          <div class="card" (click)="dialogCollaborator(collaborator)" *ngIf="position === collaborator.position">
+            <div class="circle">
+              <p>{{collaborator.name.slice(0, 1)}}</p>
+            </div>
+
+            <h4>{{collaborator.name}}</h4>
+
+            <div class="description">
+              <p>
+                <mat-icon class="tab-icon">view_agenda</mat-icon> {{collaborator.department}}
+              </p>
+              <p>
+                <mat-icon class="tab-icon">work</mat-icon> {{collaborator.position}}
+              </p>
+            </div>
+
+            <div class="document">
+              <p>{{collaborator.cpf}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </mat-tab>
+
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon class="tab-icon">assignment</mat-icon>
+      Resumo
+    </ng-template>
+
+    <div class="empty-state" *ngIf="collaborators.length === 0">
+      Não há Colaboradores cadastrados
+    </div>
+
+    <section class="resume">
+      <table mat-table [dataSource]="collaborators" class="mat-elevation-z8">
+
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>No.</th>
+          <td mat-cell *matCellDef="let collaborator"> {{collaborator.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>Nome</th>
+          <td mat-cell *matCellDef="let collaborator"> {{collaborator.name}} </td>
+        </ng-container>
+
+        <!-- CPF Column -->
+        <ng-container matColumnDef="cpf">
+          <th mat-header-cell *matHeaderCellDef>CPF</th>
+          <td mat-cell *matCellDef="let collaborator"> {{collaborator.cpf}} </td>
+        </ng-container>
+
+        <!-- Department Column -->
+        <ng-container matColumnDef="department">
+          <th mat-header-cell *matHeaderCellDef>Setor</th>
+          <td mat-cell *matCellDef="let collaborator"> {{collaborator.department}} </td>
+        </ng-container>
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef>Cargo</th>
+          <td mat-cell *matCellDef="let collaborator"> {{collaborator.position}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="dialogCollaborator(row)"></tr>
+      </table>
+    </section>
+
+  </mat-tab>
+</mat-tab-group>

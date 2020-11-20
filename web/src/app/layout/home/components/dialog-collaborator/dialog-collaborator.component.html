@@ -1,0 +1,63 @@
+<ng-template [ngIf]="data">
+  <h1 mat-dialog-title>Editando Colaborador</h1>
+  <div mat-dialog-content>
+    <form #form="ngForm">
+      <mat-form-field class="fieldCollaborator">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="data.name" name="name" type="text" placeholder="Nome" required>
+      </mat-form-field>
+
+      <mat-form-field class="fieldCollaborator">
+        <mat-label>CPF</mat-label>
+        <input matInput [(ngModel)]="data.cpf" name="cpf" placeholder="CPF" type="text" required>
+      </mat-form-field>
+
+      <mat-form-field class="fieldCollaborator">
+        <mat-label>Setor</mat-label>
+        <input matInput [(ngModel)]="data.department" name="department" placeholder="Setor" type="text" required>
+      </mat-form-field>
+
+      <mat-form-field class="fieldCollaborator">
+        <mat-label>Cargo</mat-label>
+        <input matInput [(ngModel)]="data.position" name="position" placeholder="Cargo" type="text" required>
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="closeModal()">Fechar</button>
+    <button mat-button (click)="deleteCollaborator()" color="warn">Excluir</button>
+    <button mat-button (click)="updateCollaborator()" color="primary" [disabled]="form.form.invalid">Salvar</button>
+  </div>
+</ng-template>
+
+
+<ng-template [ngIf]="!data">
+  <h1 mat-dialog-title>Novo Colaborador</h1>
+  <div mat-dialog-content>
+    <form #form="ngForm">
+      <mat-form-field class="fieldNewCollaborator">
+        <mat-label>Nome</mat-label>
+        <input matInput [(ngModel)]="newCollaborator.name" name="name" type="text" placeholder="Nome" required>
+      </mat-form-field>
+
+      <mat-form-field class="fieldNewCollaborator">
+        <mat-label>CPF</mat-label>
+        <input matInput [(ngModel)]="newCollaborator.cpf" name="cpf" placeholder="CPF" type="text" required>
+      </mat-form-field>
+
+      <mat-form-field class="fieldNewCollaborator">
+        <mat-label>Setor</mat-label>
+        <input matInput [(ngModel)]="newCollaborator.department" name="department" placeholder="Setor" type="text" required>
+      </mat-form-field>
+
+      <mat-form-field class="fieldNewCollaborator">
+        <mat-label>Cargo</mat-label>
+        <input matInput [(ngModel)]="newCollaborator.position" name="position" placeholder="Cargo" type="text" required>
+      </mat-form-field>
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="closeModal()">Fechar</button>
+    <button mat-button (click)="createCollaborator()" color="primary" [disabled]="form.form.invalid">Adicionar</button>
+  </div>
+</ng-template>

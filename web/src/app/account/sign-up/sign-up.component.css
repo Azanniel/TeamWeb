@@ -1,0 +1,107 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 45px;
+}
+
+.container .goback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  width: 50px;
+  height: 50px;
+
+  background: none;
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+}
+
+.container mat-icon {
+  font-size: 46px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+header img {
+  width: 120px;
+}
+
+header h3 {
+  color: #333;
+  font-size: 38px;
+  font-weight: bold;
+
+  margin-top: 40px;
+  margin-bottom: 20px;
+
+  text-align: center;
+}
+
+header p {
+  font-size: 16px;
+  color: #333;
+  font-weight: 200;
+  text-align: center;
+}
+
+.validate-email {
+  width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #AA3C3C;
+  background-color: #AA3C3C66;
+  color: #AA3C3C;
+}
+
+.hidden {
+  display: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  max-width: 350px;
+
+  padding: 10px;
+}
+
+form .fieldSignUp {
+  width: 100%;
+}
+
+form button {
+  font-size: 16px;
+  font-weight: bold;
+  height: 40px;
+  background-color: #588ED2;
+  color: #fff;
+  margin-top: 20px;
+}
