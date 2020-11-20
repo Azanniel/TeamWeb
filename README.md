@@ -1,8 +1,8 @@
 <div align="center">
   <img
-    src="./web/src/assets/logoWithName.svg"
+    src="./.github/logo.png"
     width="80"
-    height="80"
+    height="100"
   />
 
   > 🖥️ Uma aplicação web para cadastro dos seus colaboradores bem como a melhor organização deles
@@ -180,7 +180,7 @@ $ npm run dev
 
 Com isso o backend estará iniciado no endereço `http://localhost:3333` e já será possível fazer algumas requisições atraves do Insomnia ou Postman.
 
-[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=teamApp&uri=)
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=teamApp&uri=https://github.com/Azanniel/TeamWeb/blob/master/.github/Insomnia_2020-11-18.json)
 
 
 <div id="run-frontend"></div>
